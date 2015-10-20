@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Exemplo NWJS</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Olá mundo!</h1>
+</body>
+<script type="text/javascript">
+// Load native UI library
+var gui = require('nw.gui');
+
+// Create an empty menu
+var menu = new gui.Menu();
+
+// Add some items
+menu.append(new gui.MenuItem({ 
+	label: 'Item A',
+	click: function(){
+		alert('Clicou')
+	}
+}));
+
+//Com ícone
+menu.append(new gui.MenuItem({
+  type: "normal", 
+  label: "Com ícone",
+  icon: "img/icon.png"
+}));
+
+menu.append(new gui.MenuItem({ type: 'separator' }));
+menu.append(new gui.MenuItem({ label: 'Item C' }));
+
+// Remove one item
+// menu.removeAt(1);
+
+//Botão direito do mouse
+document.body.addEventListener('contextmenu', function(ev) { 
+  ev.preventDefault();
+  menu.popup(ev.x, ev.y);
+  return false;
+});
+
+</script>
+</html>

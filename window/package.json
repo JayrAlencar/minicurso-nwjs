@@ -1,0 +1,10 @@
+{
+	"name":"Exemplo NWJS - Window",
+	"version": "0.0.1",
+	"main":"index.html",
+	"window":{
+		"width":800,
+		"heigth":600,
+		"toolbar": false
+	}
+}
